@@ -9,7 +9,7 @@ interface FileDropzoneProps {
   label: string;
   description: string;
   accept?: string;
-  error?: string;
+  error?: string | undefined;
 }
 
 export function FileDropzone({
