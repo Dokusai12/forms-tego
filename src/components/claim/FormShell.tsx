@@ -22,12 +22,9 @@ export function FormShell({
     <div className="gradient-wash min-h-screen">
       <header className="border-b border-border/60 bg-background/80 backdrop-blur-sm">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <Link
-            to="/"
-            className="font-display text-lg font-semibold tracking-tight text-foreground"
-          >
+          <span className="font-display text-lg font-semibold tracking-tight text-foreground">
             {eyebrow}
-          </Link>
+          </span>
           <a
             href={supportHref}
             className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
