@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AirShieldRouteImport } from './routes/air-shield'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AirShieldRoute = AirShieldRouteImport.update({
+  id: '/air-shield',
+  path: '/air-shield',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/air-shield': typeof AirShieldRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/air-shield': typeof AirShieldRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/air-shield': typeof AirShieldRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/air-shield'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/air-shield'
+  id: '__root__' | '/' | '/air-shield'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AirShieldRoute: typeof AirShieldRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/air-shield': {
+      id: '/air-shield'
+      path: '/air-shield'
+      fullPath: '/air-shield'
+      preLoaderRoute: typeof AirShieldRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AirShieldRoute: AirShieldRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
