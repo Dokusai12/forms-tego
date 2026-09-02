@@ -42,7 +42,7 @@ const step1Schema = z.object({
 
 const step2Schema = z.object({
   disruptionType: z.string().min(1, "Please select an option"),
-  contactedAirline: z.enum(["yes", "no"], { required_error: "Please select an option" }),
+  contactedAirline: z.enum(["yes", "no"]).or(z.literal("")).refine((v) => v !== "", "Please select an option"),
   reason: z.string().min(1, "Please select an option"),
   details: z.string(),
 });
@@ -121,7 +121,7 @@ function AirShieldPage() {
     resolver: zodResolver(step2Schema),
     defaultValues: {
       disruptionType: "",
-      contactedAirline: undefined,
+      contactedAirline: "" as "" | "yes" | "no",
       reason: "",
       details: "",
     },
@@ -205,7 +205,7 @@ function AirShieldPage() {
       }
     >
       <Stepper steps={steps} currentStep={step} />
-      <StepHeader step={steps[step - 1]} steps={steps} />
+      <StepHeader step={steps[step - 1]!} steps={steps} />
 
       {step === 1 && (
         <form className="space-y-6">

@@ -183,7 +183,7 @@ function BaggageShieldPage() {
       }
     >
       <Stepper steps={steps} currentStep={step} />
-      <StepHeader step={steps[step - 1]} steps={steps} />
+      <StepHeader step={steps[step - 1]!} steps={steps} />
 
       {step === 1 && (
         <form className="space-y-6">
