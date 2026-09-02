@@ -58,29 +58,26 @@ const step3Schema = z.object({
   privacy: z.boolean().refine((v) => v, "You must agree to the privacy policy"),
 });
 
-export const Route = createFileRoute("/baggage-shield")({
-  head: () => ({
-    meta: [
-      { title: "Mishandled Baggage Report — Baggage Shield" },
-      {
-        name: "description",
-        content:
-          "Report delayed, missing or damaged baggage. Provide the airline references and we will handle the rest.",
-      },
-      { property: "og:title", content: "Mishandled Baggage Report — Baggage Shield" },
-      {
-        property: "og:description",
-        content:
-          "Report delayed, missing or damaged baggage. Provide the airline references and we will handle the rest.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: BaggageShieldPage,
+export const baggageShieldHead = () => ({
+  meta: [
+    { title: "Mishandled Baggage Report — Baggage Shield" },
+    {
+      name: "description",
+      content:
+        "Report delayed, missing or damaged baggage. Provide the airline references and we will handle the rest.",
+    },
+    { property: "og:title", content: "Mishandled Baggage Report — Baggage Shield" },
+    {
+      property: "og:description",
+      content:
+        "Report delayed, missing or damaged baggage. Provide the airline references and we will handle the rest.",
+    },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ],
 });
 
-function BaggageShieldPage() {
+export function BaggageShieldPage() {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
 
