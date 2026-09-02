@@ -1,6 +1,6 @@
 # Tego-style claim forms: Air Shield + Baggage Shield
 
-Rebuild both 3-step claim forms in this project with one shared design system that matches tego-group.com — front-end only, no backend.
+Rebuild both 3-step claim forms in this project with one shared design system that borrows the clean, product-led visual language of tego-group.com, but with no visible Tego branding — front-end only, no backend.
 
 ## What I checked on tego-group.com
 
