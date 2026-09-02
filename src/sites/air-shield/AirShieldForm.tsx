@@ -77,29 +77,26 @@ const reasons = [
   "Other",
 ];
 
-export const Route = createFileRoute("/air-shield")({
-  head: () => ({
-    meta: [
-      { title: "Flight Disruption Claim — Air Shield" },
-      {
-        name: "description",
-        content:
-          "Request compensation for a cancelled, delayed, or denied boarding flight. Tell us what happened and attach your booking.",
-      },
-      { property: "og:title", content: "Flight Disruption Claim — Air Shield" },
-      {
-        property: "og:description",
-        content:
-          "Request compensation for a cancelled, delayed, or denied boarding flight. Tell us what happened and attach your booking.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: AirShieldPage,
+export const airShieldHead = () => ({
+  meta: [
+    { title: "Flight Disruption Claim — Air Shield" },
+    {
+      name: "description",
+      content:
+        "Request compensation for a cancelled, delayed, or denied boarding flight. Tell us what happened and attach your booking.",
+    },
+    { property: "og:title", content: "Flight Disruption Claim — Air Shield" },
+    {
+      property: "og:description",
+      content:
+        "Request compensation for a cancelled, delayed, or denied boarding flight. Tell us what happened and attach your booking.",
+    },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ],
 });
 
-function AirShieldPage() {
+export function AirShieldPage() {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
 
