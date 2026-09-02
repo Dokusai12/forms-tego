@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AirShieldRouteImport } from './routes/air-shield'
+import { Route as BaggageShieldRouteImport } from './routes/baggage-shield'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +23,40 @@ const AirShieldRoute = AirShieldRouteImport.update({
   path: '/air-shield',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BaggageShieldRoute = BaggageShieldRouteImport.update({
+  id: '/baggage-shield',
+  path: '/baggage-shield',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/air-shield': typeof AirShieldRoute
+  '/baggage-shield': typeof BaggageShieldRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/air-shield': typeof AirShieldRoute
+  '/baggage-shield': typeof BaggageShieldRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/air-shield': typeof AirShieldRoute
+  '/baggage-shield': typeof BaggageShieldRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/air-shield'
+  fullPaths: '/' | '/air-shield' | '/baggage-shield'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/air-shield'
-  id: '__root__' | '/' | '/air-shield'
+  to: '/' | '/air-shield' | '/baggage-shield'
+  id: '__root__' | '/' | '/air-shield' | '/baggage-shield'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AirShieldRoute: typeof AirShieldRoute
+  BaggageShieldRoute: typeof BaggageShieldRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AirShieldRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/baggage-shield': {
+      id: '/baggage-shield'
+      path: '/baggage-shield'
+      fullPath: '/baggage-shield'
+      preLoaderRoute: typeof BaggageShieldRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AirShieldRoute: AirShieldRoute,
+  BaggageShieldRoute: BaggageShieldRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
