@@ -17,10 +17,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { FormShell, SidebarInfo } from "@/components/claim/FormShell";
-import { Stepper, StepHeader } from "@/components/claim/Stepper";
-import { FileDropzone } from "@/components/claim/FileDropzone";
-import { countryList } from "@/components/claim/types";
+import { FormShell, SidebarInfo } from "./components/FormShell";
+import { Stepper, StepHeader } from "./components/Stepper";
+import { FileDropzone } from "./components/FileDropzone";
+import { countryList } from "./components/types";
 
 const steps = [
   { number: 1, label: "Your details", description: "Who you are and which booking the report relates to." },
