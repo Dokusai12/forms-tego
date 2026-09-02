@@ -59,29 +59,56 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-ink: var(--ink);
+  --color-indigo: var(--indigo);
+  --color-indigo-foreground: var(--indigo-foreground);
+  --color-indigo-muted: var(--indigo-muted);
+  --color-indigo-subtle: var(--indigo-subtle);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-canvas: var(--canvas);
+  --color-canvas-soft: var(--canvas-soft);
+  --color-canvas-muted: var(--canvas-muted);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.75rem;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --background: oklch(0.99 0.002 270);
+  --foreground: oklch(0.145 0.035 264);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.145 0.035 264);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.145 0.035 264);
+  --primary: oklch(0.145 0.035 264);
+  --primary-foreground: oklch(0.99 0.002 270);
+  --secondary: oklch(0.965 0.008 264);
+  --secondary-foreground: oklch(0.145 0.035 264);
+  --muted: oklch(0.955 0.006 264);
+  --muted-foreground: oklch(0.52 0.03 264);
+  --accent: oklch(0.955 0.006 264);
+  --accent-foreground: oklch(0.145 0.035 264);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.91 0.012 264);
+  --input: oklch(0.91 0.012 264);
+  --ring: oklch(0.55 0.14 264);
+
+  --ink: oklch(0.11 0.03 264);
+  --indigo: oklch(0.52 0.22 264);
+  --indigo-foreground: oklch(0.99 0.002 270);
+  --indigo-muted: oklch(0.92 0.05 264);
+  --indigo-subtle: oklch(0.965 0.03 264);
+  --success: oklch(0.62 0.18 145);
+  --success-foreground: oklch(0.99 0.002 270);
+  --canvas: oklch(0.99 0.002 270);
+  --canvas-soft: oklch(0.975 0.005 264);
+  --canvas-muted: oklch(0.955 0.008 264);
+
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -117,6 +144,18 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.551 0.027 264.364);
+
+  --ink: oklch(0.984 0.003 247.858);
+  --indigo: oklch(0.62 0.2 264);
+  --indigo-foreground: oklch(0.99 0.002 270);
+  --indigo-muted: oklch(0.25 0.06 264);
+  --indigo-subtle: oklch(0.2 0.05 264);
+  --success: oklch(0.62 0.18 145);
+  --success-foreground: oklch(0.99 0.002 270);
+  --canvas: oklch(0.12 0.04 264);
+  --canvas-soft: oklch(0.16 0.05 264);
+  --canvas-muted: oklch(0.22 0.06 264);
+
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -137,8 +176,30 @@
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility gradient-wash {
+  background: radial-gradient(ellipse 80% 60% at 90% 10%, color-mix(in oklab, var(--color-indigo) 12%, transparent), transparent 60%),
+              radial-gradient(ellipse 70% 50% at 5% 95%, color-mix(in oklab, var(--color-indigo) 10%, transparent), transparent 55%),
+              var(--color-canvas);
+}
+
+@utility text-balance {
+  text-wrap: balance;
 }
