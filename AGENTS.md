@@ -1,10 +1,7 @@
-<!-- LOVABLE:BEGIN -->
-> [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
->
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
-<!-- LOVABLE:END -->
+# Agent notes
+
+TanStack Start app with file-based routes in `src/routes/` and self-contained form sites in `src/sites/`.
+
+- `/air-shield` and `/baggage-shield` each have their own form kit under `src/sites/*/components/`.
+- No backend is wired yet — form submit is client-side only.
+- Design tokens live in `src/styles.css`.

@@ -1,24 +1,24 @@
-# Design Harmony Project
+# Forms Tego
 
-Are you able to make a better design of these forms on these website, airshield.com and baggage-shield.com - To match the design and feel of tego-group.com. Please check all and make them fit and well improved design that this simple form.
+Redesigned claim forms for Air Shield (flight disruption) and Baggage Shield (mishandled baggage), styled to match the clean, product-led feel of tego-group.com.
 
-This project was built with [Lovable](https://lovable.dev).
+## Routes
 
-## Build with Lovable
+- `/` — showcase hub linking to both forms
+- `/air-shield` — 3-step flight disruption claim
+- `/baggage-shield` — 3-step mishandled baggage report
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/e8ae18ec-2b96-4e0c-aa55-0fe9c094e6fd).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+Forms are front-end only for now — submissions are validated in the browser and shown on a success screen.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requires Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
+git clone https://github.com/Dokusai12/forms-tego.git
+cd forms-tego
 npm i
 npm run dev
 ```
+
+The dev server runs at `http://localhost:8080`.
