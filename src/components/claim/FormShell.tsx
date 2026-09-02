@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { Mail, ChevronRight } from "lucide-react";
 import type { ReactNode } from "react";
 
