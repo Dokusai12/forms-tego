@@ -52,4 +52,4 @@ Design system:
 
 ## Design step
 
-Before building I'll generate three rendered design directions for the form surface, with the Tego palette, typography and card language locked, varying only composition, density and hierarchy — then build the one you pick.
+Before building I'll generate three rendered design directions for the form surface, with the reference palette, typography and card language locked, varying only composition, density and hierarchy — then build the one you pick. No Tego branding will appear in the final UI.
