@@ -2,17 +2,17 @@
 
 Rebuild both 3-step claim forms in this project with one shared design system that borrows the clean, product-led visual language of tego-group.com, but with no visible Tego branding — front-end only, no backend.
 
-## What I checked on tego-group.com
+## Design reference
 
-Homepage and /contact captured as rendered screenshots, not just text:
+Studied tego-group.com's rendered homepage and contact page as the visual reference. The design direction for this project borrows that language but strips out any Tego names, logos or product references.
 
-- **Light theme, not dark.** Near-white canvas with a very soft lavender/blue gradient wash bleeding in from the page edges.
-- **Ink and accent.** Near-black ink (`#0B1220`-ish) for headings and primary buttons; a single saturated indigo-blue (`#3B4FE4`-ish) for the accent CTA, eyebrow labels, links and chart bars. Pale indigo tints for chips, icon tiles and active nav states. Green only for positive deltas.
+- **Light theme.** Near-white canvas with a very soft lavender/blue gradient wash bleeding in from the page edges.
+- **Ink and accent.** Near-black ink for headings and primary buttons; a single saturated indigo-blue for accent CTAs, eyebrow labels, links and chart bars. Pale indigo tints for chips, icon tiles and active nav states. Green only for positive deltas.
 - **Typography.** Large geometric sans headings, tight tracking, heavy weight, sentence case ending in a full stop. Body copy is mid-grey, comfortable line height. Small semibold field labels.
 - **Buttons.** Full pill radius, solid black or solid indigo, right chevron affordance.
 - **Cards.** ~20–24px radius, 1px hairline border, near-white/faint-grey fill, almost no shadow. Nested inner cards for stats.
-- **Bento grid in Products.** One large flagship tile (Refund Shield) with a live checkout mock inside, paired with smaller tiles (Baggage Shield, Air Shield, Analytics) of unequal size in the same grid — each tile carries a category chip, title, one-line description and a miniature product UI mock rather than an icon.
-- **Contact form pattern.** Two-column split: left is eyebrow + big headline + supporting copy + a contact tile; right is the form in a bordered soft-fill card, stacked full-width fields, tall inputs with light borders and grey placeholders, one full-width black pill submit, and a small reassurance line under it ("We'll respond within one business day").
+- **Bento grid reference.** Unequal-size tiles, each carrying a category chip, title, one-line description and a miniature product UI mock rather than an icon.
+- **Contact form reference.** Two-column split: left is eyebrow + big headline + supporting copy + a contact tile; right is the form in a bordered soft-fill card, stacked full-width fields, tall inputs with light borders and grey placeholders, one full-width black pill submit, and a small reassurance line under it.
 
 ## What I checked on the two form sites
 
